@@ -1,34 +1,35 @@
 variable "instance_name" {
-  type        = string
   description = "Name tag for the EC2 instance"
+  type        = string
 }
 
 variable "instance_type" {
+  description = "Type of EC2 instance (e.g., t2.micro)"
   type        = string
-  description = "EC2 instance type"
 }
 
 variable "ami_id" {
+  description = "AMI ID to use for the EC2 instance"
   type        = string
-  description = "AMI ID for the instance"
 }
 
 variable "subnet_id" {
+  description = "Subnet ID where EC2 instance will be deployed"
   type        = string
-  description = "Subnet ID"
 }
 
 variable "vpc_security_group_ids" {
+  description = "List of security group IDs"
   type        = list(string)
-  description = "Security groups"
 }
 
 variable "key_name" {
+  description = "Key pair name to access the instance"
   type        = string
-  description = "SSH key name"
 }
 
 variable "associate_public_ip_address" {
+  description = "Whether to associate a public IP address"
   type        = bool
-  description = "Assign public IP?"
+  default     = true
 }
